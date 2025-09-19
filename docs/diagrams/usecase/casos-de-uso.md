@@ -1,0 +1,88 @@
+# Use Cases Diagram - Café Management System
+
+**PlantUML File:** `casos-de-uso.wsd`
+
+```plantuml
+@startuml Use Cases
+
+left to right direction
+
+actor "Manager" as M
+actor "Cashier" as C
+actor "Customer" as Cust
+
+package "Product Management" {
+    usecase "Create Product" as UC1
+    usecase "Update Product" as UC2
+    usecase "Delete Product" as UC3
+    usecase "View Product List" as UC4
+    usecase "Manage Categories" as UC5
+    usecase "Manage Ingredients" as UC6
+    usecase "Manage Tables" as UC7
+}
+
+package "Inventory Management" {
+    usecase "Add Supplier" as UC8
+    usecase "Update Inventory" as UC9
+    usecase "Check Stock Levels" as UC10
+    usecase "Generate Low Stock Alerts" as UC11
+    usecase "View Inventory Reports" as UC12
+}
+
+package "Promotion Management" {
+    usecase "Create Promotion" as UC13
+    usecase "Update Promotion" as UC14
+    usecase "Activate/Deactivate Promotion" as UC15
+    usecase "View Active Promotions" as UC16
+}
+
+package "Sales Management" {
+    usecase "Process Order" as UC17
+    usecase "Apply Discounts" as UC18
+    usecase "Generate Receipt" as UC19
+    usecase "View Sales Reports" as UC20
+}
+
+package "System Administration" {
+    usecase "Manage Users" as UC21
+    usecase "Manage Roles" as UC22
+    usecase "Configure Payment Methods" as UC23
+    usecase "System Configuration" as UC24
+}
+
+' Manager use cases
+M --> UC1
+M --> UC2
+M --> UC3
+M --> UC4
+M --> UC5
+M --> UC6
+M --> UC7
+M --> UC8
+M --> UC9
+M --> UC10
+M --> UC11
+M --> UC12
+M --> UC13
+M --> UC14
+M --> UC15
+M --> UC16
+M --> UC21
+M --> UC22
+M --> UC23
+M --> UC24
+
+' Cashier use cases
+C --> UC4
+C --> UC10
+C --> UC16
+C --> UC17
+C --> UC18
+C --> UC19
+C --> UC20
+
+' Customer use cases
+Cust --> UC4
+Cust --> UC16
+
+@enduml

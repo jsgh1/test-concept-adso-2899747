@@ -1,0 +1,130 @@
+@startuml UML Class Diagram
+
+' Entidades principales
+class Category {
+    +id: String
+    +name: String
+    +description: String
+    +status: String
+    +created_at: DateTime
+    +updated_at: DateTime
+    +created_by: String
+    +updated_by: String
+}
+
+class Product {
+    +id: String
+    +category_id: String
+    +sku: String
+    +name: String
+    +description: String
+    +price: Decimal
+    +is_portion_based: Boolean
+    +prep_time_minutes: Integer
+    +status: String
+    +created_at: DateTime
+    +updated_at: DateTime
+    +created_by: String
+    +updated_by: String
+}
+
+class Ingredient {
+    +id: String
+    +name: String
+    +unit: String
+    +cost: Decimal
+    +status: String
+    +created_at: DateTime
+    +updated_at: DateTime
+}
+
+class ProductIngredient {
+    +id: String
+    +product_id: String
+    +ingredient_id: String
+    +quantity: Decimal
+    +created_at: DateTime
+}
+
+class Promotion {
+    +id: String
+    +name: String
+    +description: String
+    +discount_percent: Decimal
+    +discount_amount: Decimal
+    +start_at: DateTime
+    +end_at: DateTime
+    +active: Boolean
+    +created_at: DateTime
+}
+
+class Supplier {
+    +id: String
+    +name: String
+    +contact_person: String
+    +phone: String
+    +email: String
+    +address: String
+    +status: String
+    +created_at: DateTime
+}
+
+class InventoryItem {
+    +id: String
+    +supplier_id: String
+    +product_id: String
+    +ingredient_id: String
+    +quantity: Decimal
+    +unit_price: Decimal
+    +created_at: DateTime
+    +updated_at: DateTime
+}
+
+class Table {
+    +id: String
+    +table_number: Integer
+    +capacity: Integer
+    +location: String
+    +is_active: Boolean
+    +created_at: DateTime
+    +updated_at: DateTime
+}
+
+class PaymentMethod {
+    +id: String
+    +name: String
+    +description: String
+    +is_active: Boolean
+    +processing_fee: Decimal
+    +created_at: DateTime
+    +updated_at: DateTime
+}
+
+class User {
+    +id: String
+    +username: String
+    +password: String
+    +role_id: String
+    +active: Boolean
+    +created_at: DateTime
+    +updated_at: DateTime
+}
+
+class Role {
+    +id: String
+    +name: String
+    +created_at: DateTime
+    +updated_at: DateTime
+}
+
+' Relaciones
+Product "1" *-- "0..*" ProductIngredient : contains
+Ingredient "1" *-- "0..*" ProductIngredient : used in
+Category "1" *-- "0..*" Product : categorizes
+Supplier "1" *-- "0..*" InventoryItem : supplies
+InventoryItem "0..*" --> "1" Product : tracks
+InventoryItem "0..*" --> "1" Ingredient : tracks
+User "1" --> "1" Role : has
+Promotion "0..*" --> "0..*" Product : applies to
+
+@enduml

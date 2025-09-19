@@ -1,0 +1,136 @@
+@startuml Entity-Relationship Model (MER)
+
+package "product_schema" {
+    class category {
+        +id: Long <<AUTO_INCREMENT>>
+        +name: String
+        +description: String
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+
+    class product {
+        +id: Long <<AUTO_INCREMENT>>
+        +name: String
+        +description: String
+        +price: Decimal
+        +category_id: Long <<FK>>
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+
+    class ingredient {
+        +id: Long <<AUTO_INCREMENT>>
+        +name: String
+        +description: String
+        +unit: String
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+
+    class product_ingredient {
+        +id: Long <<AUTO_INCREMENT>>
+        +product_id: Long <<FK>>
+        +ingredient_id: Long <<FK>>
+        +quantity: Decimal
+        +created_at: DateTime
+    }
+
+    class cafe_table {
+        +id: Long <<AUTO_INCREMENT>>
+        +table_number: Integer <<UNIQUE>>
+        +capacity: Integer
+        +location: String
+        +is_active: Boolean
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+}
+
+package "inventory_schema" {
+    class supplier {
+        +id: Long <<AUTO_INCREMENT>>
+        +name: String
+        +contact_person: String
+        +phone: String
+        +email: String
+        +address: String
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+
+    class inventory_item {
+        +id: Long <<AUTO_INCREMENT>>
+        +supplier_id: Long <<FK>>
+        +product_id: Long <<FK>>
+        +ingredient_id: Long <<FK>>
+        +quantity: Decimal
+        +unit_price: Decimal
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+}
+
+package "promotion_schema" {
+    class promotion {
+        +id: Long <<AUTO_INCREMENT>>
+        +name: String
+        +description: String
+        +discount_type: String
+        +discount_value: Decimal
+        +start_date: Date
+        +end_date: Date
+        +active: Boolean
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+}
+
+package "parameterization_schema" {
+    class role {
+        +id: Long <<AUTO_INCREMENT>>
+        +name: String
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+
+    class payment_method {
+        +id: Long <<AUTO_INCREMENT>>
+        +name: String
+        +description: String
+        +is_active: Boolean
+        +processing_fee: Decimal
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+}
+
+package "security_schema" {
+    class user {
+        +id: Long <<AUTO_INCREMENT>>
+        +username: String <<UNIQUE>>
+        +password: String
+        +role_id: Long <<FK>>
+        +active: Boolean
+        +created_at: DateTime
+        +updated_at: DateTime
+    }
+}
+
+' Relaciones dentro de product_schema
+category ||--o{ product : categorizes
+product ||--o{ product_ingredient : contains
+ingredient ||--o{ product_ingredient : used_in
+
+' Relaciones dentro de inventory_schema
+supplier ||--o{ inventory_item : supplies
+product ||--o{ inventory_item : tracks
+ingredient ||--o{ inventory_item : tracks
+
+' Relaciones dentro de security_schema
+user --> role : has
+
+' Relaciones cross-schema
+product ||--o{ promotion : can_have_promotions
+
+@enduml

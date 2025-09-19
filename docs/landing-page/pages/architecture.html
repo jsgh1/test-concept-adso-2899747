@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura - Sistema de Gestión de Cafetería</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo"><i class="fas fa-mug-hot"></i> CaféSystem</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#architecture"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a href="#technologies"><i class="fas fa-laptop-code"></i> Tecnologías</a></li>
+                <li><a href="#patterns"><i class="fas fa-puzzle-piece"></i> Patrones</a></li>
+                <li><a href="#deployment"><i class="fas fa-rocket"></i> Despliegue</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1><i class="fas fa-sitemap"></i> Arquitectura del Sistema</h1>
+            <p>Diseño técnico detallado de nuestro Sistema de Gestión de Cafetería</p>
+        </div>
+    </section>
+
+    <!-- Architecture Details -->
+    <section id="architecture" class="content-section fade-in">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3><i class="fas fa-layer-group"></i> Visión General de la Arquitectura</h3>
+                    <p>Nuestro sistema sigue una arquitectura moderna y modular, diseñada específicamente para satisfacer las necesidades de gestión de cafeterías modernas.</p>
+
+                    <h4>Principios Arquitectónicos:</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-cubes"></i> <strong>Modularidad:</strong> Módulos independientes para productos, inventario y promociones</li>
+                        <li><i class="fas fa-database"></i> <strong>Gestión de Datos:</strong> Base de datos MySQL optimizada para rendimiento</li>
+                        <li><i class="fas fa-expand-arrows-alt"></i> <strong>Escalabilidad:</strong> Arquitectura preparada para crecimiento</li>
+                        <li><i class="fas fa-tools"></i> <strong>Mantenibilidad:</strong> Código limpio y bien documentado</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h3><i class="fas fa-layer-group"></i> Arquitectura en Capas</h3>
+                    <p>Cada módulo implementa una arquitectura limpia en capas:</p>
+
+                    <div class="architecture-layers">
+                        <div class="layer">
+                            <i class="fas fa-globe"></i>
+                            <span>Capa de Controladores (API REST)</span>
+                        </div>
+                        <div class="layer-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="layer">
+                            <i class="fas fa-cogs"></i>
+                            <span>Capa de Servicios (Lógica de Negocio)</span>
+                        </div>
+                        <div class="layer-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="layer">
+                            <i class="fas fa-database"></i>
+                            <span>Capa de Repositorios (Acceso a Datos)</span>
+                        </div>
+                        <div class="layer-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="layer">
+                            <i class="fas fa-server"></i>
+                            <span>Capa de Base de Datos (MySQL)</span>
+                        </div>
+                    </div>
+
+                    <p><strong>Beneficios:</strong></p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-vial"></i> Facilidad de pruebas en cada capa</li>
+                        <li><i class="fas fa-project-diagram"></i> Clara separación de responsabilidades</li>
+                        <li><i class="fas fa-tools"></i> Mantenimiento y actualizaciones simples</li>
+                        <li><i class="fas fa-cube"></i> Independencia del framework</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="content-section fade-in">
+        <div class="container">
+            <h2><i class="fas fa-laptop-code"></i> Stack Tecnológico</h2>
+            <p>Tecnologías modernas seleccionadas para garantizar confiabilidad y rendimiento</p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fab fa-java"></i></div>
+                    <h3>Java 17</h3>
+                    <p>Versión LTS con características modernas</p>
+                    <ul class="feature-list">
+                        <li>Records para DTOs eficientes</li>
+                        <li>Pattern matching mejorado</li>
+                        <li>Switch expressions</li>
+                        <li>Text blocks para consultas SQL</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Spring Boot 3.x</h3>
+                    <p>Framework empresarial listo para producción</p>
+                    <ul class="feature-list">
+                        <li>Auto-configuración inteligente</li>
+                        <li>Servidor embebido Tomcat</li>
+                        <li>Monitoreo con Actuator</li>
+                        <li>Seguridad integrada</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-database"></i></div>
+                    <h3>MySQL 8+</h3>
+                    <p>Base de datos relacional robusta y confiable</p>
+                    <ul class="feature-list">
+                        <li>Gestión eficiente de esquemas</li>
+                        <li>Indexación avanzada</li>
+                        <li>Transacciones ACID</li>
+                        <li>Alta disponibilidad</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-server"></i></div>
+                    <h3>Spring Data JPA</h3>
+                    <p>Mapeo objeto-relacional y acceso a datos</p>
+                    <ul class="feature-list">
+                        <li>Patrón Repository</li>
+                        <li>Consultas dinámicas</li>
+                        <li>Queries personalizadas</li>
+                        <li>Soporte para auditoría</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Spring Security</h3>
+                    <p>Framework de autenticación y autorización</p>
+                    <ul class="feature-list">
+                        <li>JWT integration</li>
+                        <li>Role-based access</li>
+                        <li>OAuth2 support</li>
+                        <li>Method security</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>OpenAPI/Swagger</h3>
+                    <p>API documentation and testing</p>
+                    <ul class="card-features">
+                        <li>Interactive documentation</li>
+                        <li>API testing interface</li>
+                        <li>Code generation</li>
+                        <li>Contract-first development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Patterns -->
+    <section id="patterns" class="content-section">
+        <div class="container">
+            <h2>Design Patterns</h2>
+            <p>Industry-standard patterns implemented throughout the system</p>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🏛️ Repository Pattern</h3>
+                    <p>Abstracts data access logic and provides a consistent interface</p>
+                    <div class="code-block">
+public interface PatientRepository extends JpaRepository<Patient, Long> {
+    List<Patient> findByLastName(String lastName);
+    Optional<Patient> findByEmail(String email);
+}
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>🎯 Service Layer Pattern</h3>
+                    <p>Contains business logic and orchestrates repository calls</p>
+                    <div class="code-block">
+@Service
+public class PatientService {
+    @Autowired
+    private PatientRepository repository;
+
+    public Patient createPatient(Patient patient) {
+        // Business logic here
+        return repository.save(patient);
+    }
+}
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>🎨 DTO Pattern</h3>
+                    <p>Data Transfer Objects for API communication</p>
+                    <div class="code-block">
+public record PatientDTO(
+    Long id,
+    String name,
+    String lastName,
+    LocalDate birthDate,
+    String phone,
+    String email
+) {}
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>🛡️ Controller Pattern</h3>
+                    <p>REST endpoints with proper HTTP response handling</p>
+                    <div class="code-block">
+@RestController
+@RequestMapping("/api/patients")
+public class PatientController {
+    @PostMapping
+    public ResponseEntity<PatientDTO> create(@RequestBody PatientDTO dto) {
+        // Implementation
+    }
+}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Section -->
+    <section id="deployment" class="content-section">
+        <div class="container">
+            <h2>Deployment Architecture</h2>
+            <p>Scalable deployment strategy for production environments</p>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🐳 Containerization</h3>
+                    <p>Docker containers for consistent deployment</p>
+                    <div class="code-block">
+FROM openjdk:17-jdk-slim
+COPY target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","/app.jar"]
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>☸️ Orchestration</h3>
+                    <p>Kubernetes for container orchestration</p>
+                    <div class="code-block">
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hams-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hams
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>🗄️ Database</h3>
+                    <p>PostgreSQL with connection pooling</p>
+                    <div class="code-block">
+spring.datasource.hikari.maximum-pool-size=20
+spring.datasource.hikari.minimum-idle=5
+spring.jpa.hibernate.ddl-auto=validate
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>📊 Monitoring</h3>
+                    <p>Application monitoring and health checks</p>
+                    <div class="code-block">
+management.endpoints.web.exposure.include=*
+management.endpoint.health.show-details=always
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Hospital Appointment Management System</h3>
+            <p>Technical architecture documentation</p>
+            <p>© 2024 - Java 17 + Spring Boot 3.x + PostgreSQL</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@startuml Sequence Diagram - Create Product
+
+actor "Administrador" as A
+participant "Sistema" as S
+participant "Inventario" as I
+participant "Base de Datos" as DB
+
+' Creación de Producto
+A -> S: Crear nuevo producto
+S -> S: Validar datos del producto
+S -> DB: Guardar producto
+DB --> S: Confirmar guardado
+
+' Asignación de Ingredientes
+A -> S: Asignar ingredientes al producto
+S -> I: Verificar disponibilidad
+I -> DB: Consultar stock
+DB --> I: Devolver niveles de stock
+I --> S: Confirmar disponibilidad
+S -> DB: Guardar relación producto-ingredientes
+DB --> S: Confirmar guardado
+
+' Actualización de Inventario
+S -> I: Calcular nuevo stock
+I -> DB: Actualizar niveles
+DB --> I: Confirmar actualización
+
+' Notificación de Stock Bajo
+I -> S: Verificar umbrales
+S -> A: Notificar si stock bajo
+
+@enduml

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Cafetería</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo"><i class="fas fa-mug-hot"></i> CaféSystem</a>
+            <ul class="nav-menu">
+                <li><a href="#home"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#architecture"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a href="#modules"><i class="fas fa-cubes"></i> Módulos</a></li>
+                <li><a href="#database"><i class="fas fa-database"></i> Base de Datos</a></li>
+                <li><a href="#diagrams"><i class="fas fa-project-diagram"></i> Diagramas</a></li>
+                <li><a href="#api"><i class="fas fa-code"></i> API</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container fade-in">
+            <h1>Sistema de Gestión de Cafetería</h1>
+            <p>Solución integral para administrar tu cafetería de manera eficiente y profesional</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <i class="fas fa-coffee"></i>
+                    <span>Gestión de Productos</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-box"></i>
+                    <span>Control de Inventario</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-percent"></i>
+                    <span>Manejo de Promociones</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="pages/architecture.html" class="btn btn-primary"><i class="fas fa-sitemap"></i> Explorar Arquitectura</a>
+                <a href="pages/modules.html" class="btn btn-secondary"><i class="fas fa-cubes"></i> Ver Módulos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Overview -->
+    <section id="architecture" class="section fade-in">
+        <div class="container">
+            <h2><i class="fas fa-sitemap"></i> Arquitectura del Sistema</h2>
+            <p>Una solución robusta y escalable construida con tecnologías modernas</p>
+
+            <div class="architecture-grid">
+                <div class="arch-component">
+                    <div class="card-icon"><i class="fab fa-java"></i></div>
+                    <h3>Java 17 + Spring Boot</h3>
+                    <p>Framework moderno y potente para desarrollo backend</p>
+                </div>
+                <div class="arch-component">
+                    <div class="card-icon"><i class="fas fa-database"></i></div>
+                    <h3>MySQL Database</h3>
+                    <p>Gestión eficiente y segura de datos</p>
+                </div>
+                <div class="arch-component">
+                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Arquitectura en Capas</h3>
+                    <p>Diseño modular y mantenible</p>
+                </div>
+                <div class="arch-component">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad Integrada</h3>
+                    <p>Autenticación y autorización robusta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="section fade-in">
+        <div class="container">
+            <h2><i class="fas fa-cubes"></i> Módulos del Sistema</h2>
+            <p>Sistema completo para gestión de cafeterías con módulos especializados</p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-coffee"></i></div>
+                    <h3>Módulo de Productos</h3>
+                    <p>Gestión completa del menú y productos</p>
+                    <ul class="card-features">
+                        <li>Catálogo de bebidas y alimentos</li>
+                        <li>Personalización de productos</li>
+                        <li>Gestión de precios y variantes</li>
+                        <li>Control de recetas y preparación</li>
+                    </ul>
+                    <a href="pages/modules.html#products" class="btn btn-secondary">Ver Detalles</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-boxes"></i></div>
+                    <h3>Módulo de Inventario</h3>
+                    <p>Control completo del inventario y proveedores</p>
+                    <ul class="card-features">
+                        <li>Gestión de ingredientes y materias primas</li>
+                        <li>Control de stock y alertas</li>
+                        <li>Gestión de proveedores</li>
+                        <li>Reportes de inventario</li>
+                    </ul>
+                    <a href="pages/modules.html#inventory" class="btn btn-secondary">Ver Detalles</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-tags"></i></div>
+                    <h3>Módulo de Promociones</h3>
+                    <p>Gestión de ofertas y promociones</p>
+                    <ul class="card-features">
+                        <li>Creación de promociones</li>
+                        <li>Descuentos y ofertas especiales</li>
+                        <li>Campañas temporales</li>
+                        <li>Análisis de efectividad</li>
+                    </ul>
+                    <a href="pages/modules.html#promotions" class="btn btn-secondary">Ver Detalles</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Módulo de Parametrización</h3>
+                    <p>Configuración del sistema</p>
+                    <ul class="card-features">
+                        <li>Gestión de categorías</li>
+                        <li>Configuración de parámetros</li>
+                        <li>Gestión de estados</li>
+                        <li>Personalización del sistema</li>
+                    </ul>
+                    <a href="pages/modules.html#parameterization" class="btn btn-secondary">Ver Detalles</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Módulo de Seguridad</h3>
+                    <p>Control de acceso y seguridad</p>
+                    <ul class="card-features">
+                        <li>Autenticación de usuarios</li>
+                        <li>Control de roles y permisos</li>
+                        <li>Auditoría de acciones</li>
+                        <li>Gestión de sesiones</li>
+                    </ul>
+                    <a href="pages/modules.html#security" class="btn btn-secondary">Ver Detalles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Section -->
+    <section id="database" class="section fade-in">
+        <div class="container">
+            <h2><i class="fas fa-database"></i> Diseño de Base de Datos</h2>
+            <p>Base de datos MySQL con estructura modular y eficiente</p>
+
+            <div class="database-schema">
+                <h3>Arquitectura de Esquemas</h3>
+                <div class="schema-grid">
+                    <div class="schema-item">
+                        <h4><i class="fas fa-coffee"></i> Productos</h4>
+                        <p>Gestión del catálogo de productos</p>
+                        <small>Tablas: producto, categoria, receta</small>
+                    </div>
+                    <div class="schema-item">
+                        <h4><i class="fas fa-boxes"></i> Inventario</h4>
+                        <p>Control de inventario y proveedores</p>
+                        <small>Tablas: ingrediente, stock, proveedor</small>
+                    </div>
+                    <div class="schema-item">
+                        <h4><i class="fas fa-tags"></i> Promociones</h4>
+                        <p>Sistema de promociones y descuentos</p>
+                        <small>Tablas: promocion, descuento, campaña</small>
+                    </div>
+                    <div class="schema-item">
+                        <h4><i class="fas fa-cogs"></i> Parametrización</h4>
+                        <p>Configuración del sistema</p>
+                        <small>Tablas: parametro, estado, categoria</small>
+                    </div>
+                    <div class="schema-item">
+                        <h4><i class="fas fa-shield-alt"></i> Seguridad</h4>
+                        <p>Gestión de usuarios y permisos</p>
+                        <small>Tablas: usuario, rol, permiso</small>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="pages/database.html" class="btn btn-primary">Ver Diseño Completo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagrams Section -->
+    <section id="diagrams" class="section">
+        <div class="container">
+            <h2>UML Diagrams</h2>
+            <p>Complete UML documentation with PlantUML diagrams</p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>Use Case Diagram</h3>
+                    <p>System actors and their interactions</p>
+                    <p>Shows patient, doctor, and administrator use cases</p>
+                    <a href="pages/diagrams.html#use-case" class="btn btn-secondary">View Diagram</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Class Diagram (MER)</h3>
+                    <p>Entity-Relationship Model with database schemas</p>
+                    <p>Complete data model with relationships</p>
+                    <a href="pages/diagrams.html#classes" class="btn btn-secondary">View Diagram</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Sequence Diagram</h3>
+                    <p>Appointment booking process flow</p>
+                    <p>Step-by-step interaction between actors</p>
+                    <a href="pages/diagrams.html#sequence" class="btn btn-secondary">View Diagram</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📦</div>
+                    <h3>Package Diagram</h3>
+                    <p>Module organization and dependencies</p>
+                    <p>Microservices architecture visualization</p>
+                    <a href="pages/diagrams.html#packages" class="btn btn-secondary">View Diagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section id="api" class="section">
+        <div class="container">
+            <h2>REST API Documentation</h2>
+            <p>Well-structured REST endpoints following RESTful principles</p>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>API Endpoints</h3>
+                    <div class="code-block">
+GET    /api/patients              # List patients
+GET    /api/patients/{id}         # Get patient by ID
+POST   /api/patients              # Create patient
+PUT    /api/patients/{id}         # Update patient
+DELETE /api/patients/{id}         # Delete patient
+GET    /api/patients/{id}/history # Get medical history
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>Response Format</h3>
+                    <div class="code-block">
+{
+  "id": 1,
+  "name": "John",
+  "last_name": "Doe",
+  "birth_date": "1990-01-01",
+  "phone": "+1234567890",
+  "email": "john.doe@email.com"
+}
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="pages/api.html" class="btn btn-primary">View Complete API Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Hospital Appointment Management System</h3>
+            <p>A comprehensive solution for hospital appointment management built with modern Java technologies</p>
+            <p>© 2024 - Built with Java 17, Spring Boot 3.x, and PostgreSQL</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

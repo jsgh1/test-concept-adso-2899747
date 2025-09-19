@@ -1,0 +1,105 @@
+@startuml Package Diagram
+
+package "Product Module" as Prod {
+    [CategoryController]
+    [ProductController]
+    [IngredientController]
+    [TableController]
+    [CategoryService]
+    [ProductService]
+    [IngredientService]
+    [TableService]
+    [CategoryRepository]
+    [ProductRepository]
+    [IngredientRepository]
+    [TableRepository]
+    [Category]
+    [Product]
+    [Ingredient]
+    [ProductIngredient]
+    [Table]
+    note right : product_schema
+}
+
+package "Inventory Module" as Inv {
+    [SupplierController]
+    [InventoryItemController]
+    [SupplierService]
+    [InventoryItemService]
+    [SupplierRepository]
+    [InventoryItemRepository]
+    [Supplier]
+    [InventoryItem]
+    note right : inventory_schema
+}
+
+package "Promotion Module" as Promo {
+    [PromotionController]
+    [PromotionService]
+    [PromotionRepository]
+    [Promotion]
+    note right : promotion_schema
+}
+
+package "Parameterization Module" as Param {
+    [RoleController]
+    [PaymentMethodController]
+    [RoleService]
+    [PaymentMethodService]
+    [RoleRepository]
+    [PaymentMethodRepository]
+    [Role]
+    [PaymentMethod]
+    note right : parameterization_schema
+}
+
+package "Security Module" as Sec {
+    [UserController]
+    [UserService]
+    [UserRepository]
+    [User]
+    note right : security_schema
+}
+
+package "Shared Components" as Shared {
+    [AbstractController]
+    [AbstractService]
+    [BaseEntity]
+    [BaseRequestDTO]
+    [BaseResponseDTO]
+    [GlobalExceptionHandler]
+    [ApiResponseDto]
+}
+
+package "Spring Boot Application" as App {
+    [CafeManagementSystemApplication]
+    [Config Classes]
+    [SwaggerConfig]
+    [SecurityConfig]
+}
+
+package "MySQL Database" as DB
+
+' Application dependencies
+App --> Prod
+App --> Inv
+App --> Promo
+App --> Param
+App --> Sec
+App --> Shared
+
+' Module interdependencies
+Prod --> Shared
+Inv --> Shared
+Promo --> Shared
+Param --> Shared
+Sec --> Shared
+
+' Database schemas
+DB --> Prod : product_schema
+DB --> Inv : inventory_schema
+DB --> Promo : promotion_schema
+DB --> Param : parameterization_schema
+DB --> Sec : security_schema
+
+@enduml
